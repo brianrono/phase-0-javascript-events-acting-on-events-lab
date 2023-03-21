@@ -4,33 +4,34 @@ const dodger = document.getElementById("dodger");
 
 function moveDodgerLeft() {
     const leftNumbers = dodger.style.left.replace("px", "");
-    const Left = parseInt(leftNumbers, 10);
+    const left = parseInt(leftNumbers, 10);
     
     if (left > 0){
         dodger.style.left = `${left - 1}px`;
     }
 }
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Arrowleft"){
+            moveDodgerLeft();
+        }
+    });
 
 function moveDodgerRight() {
     const rightNumbers = dodger.style.left.replace("px", "");
-    const Right = parseInt(rightNumbers, 10);
+    const right = parseInt(rightNumbers, 10);
 
     if (right > 0){
-        dodger.style.left = `${right - 1}px`;
+        dodger.style.left = `${right + 1}px`;
     }
 }
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight"){
+            moveDodgerRight();
+        }
+    });
 
-document.addEventListener("keydown", function(e) {
-    if (e.key === "Arrowlet"){
-        moveDodgerLeft();
-    }
-});
 
-document.addEventListener("keyup", function (e) {
-    if (e.key === "Arrowlet"){
-        moveDodgerRight();
-    }
-});
+
 
 
 // const dodger = document.getElementById("dodger");
